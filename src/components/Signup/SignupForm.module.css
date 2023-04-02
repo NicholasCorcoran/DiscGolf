@@ -1,0 +1,78 @@
+.input3 {
+  order: 6;
+  width: 17rem;
+}
+
+.input4 {
+  order: 8;
+  width: 17rem;
+}
+
+.input5 {
+  order: 10;
+  width: 17rem;
+}
+
+.label3 {
+  order: 5;
+}
+
+.label4 {
+  order: 7;
+}
+
+.label5 {
+  order: 9;
+}
+.rNotValid {
+  background-color: rgb(173, 69, 69);
+  opacity: 80%;
+  width: 17rem;
+  order: 6;
+}
+.fNotValid {
+  background-color: rgb(173, 69, 69);
+  opacity: 80%;
+  width: 17rem;
+  order: 8;
+}
+.lNotValid {
+  background-color: rgb(173, 69, 69);
+  opacity: 80%;
+  width: 17rem;
+  order: 10;
+}
+
+.type {
+  position: relative;
+}
+
+.space {
+  order: 9;
+  height: 1rem;
+}
+
+.button1 {
+  border: 2px solid purple;
+  border-radius: 10px;
+  background-color: rgb(201, 7, 201);
+  color: black;
+  font-size: x-large;
+  font: bolder;
+  font-style: initial;
+  order: 11;
+  padding: 3px;
+  font-family: sans-serif;
+  width: 100px;
+  height: 45px;
+}
+.button2 {
+  border: 2px solid rgb(216, 4, 216);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  order: 12;
+  padding: 3px;
+  font-family: sans-serif;
+  width: 75px;
+}

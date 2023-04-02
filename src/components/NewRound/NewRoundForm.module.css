@@ -1,0 +1,37 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.plusimg {
+  border: 3px solid green;
+  border-radius: 100%;
+  width: 10%;
+  height: 10%;
+  position: relative;
+  transform: translate(8rem, 0.6rem);
+  margin-bottom: 1.4rem;
+}
+
+.player {
+  display: flex;
+}
+
+.button1 {
+  border: 2px solid purple;
+  border-radius: 10px;
+  background-color: rgb(201, 7, 201);
+  color: black;
+  font-size: large;
+  font: bolder;
+  font-style: initial;
+  order: 11;
+  padding: 3px;
+  font-family: sans-serif;
+  width: auto;
+  height: 45px;
+}
+
+.select {
+  margin-bottom: 0.5rem;
+}

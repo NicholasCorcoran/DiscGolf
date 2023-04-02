@@ -1,0 +1,107 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.div {
+  display: grid;
+  background-color: purple;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 1rem 1rem 1rem 1rem;
+  width: 90%;
+  height: 3rem;
+  grid-template-columns: 42% auto 45%;
+  grid-template-rows: 50% 50%;
+}
+
+.hole {
+  position: relative;
+  transform: translateY(-20px);
+  grid-area: 1/1/2/1;
+  align-self: start;
+  justify-content: center;
+}
+
+.par {
+  position: relative;
+  transform: translateY(-30px);
+  grid-column-start: 3;
+  grid-row-start: 1;
+  align-self: start;
+  justify-self: start;
+}
+
+.dist {
+  position: relative;
+  transform: translateY(-20px);
+  grid-column-start: 3;
+  grid-row-start: 2;
+  align-self: start;
+  justify-self: start;
+}
+.space {
+  height: 3rem;
+}
+
+.player {
+  position: relative;
+  transform: translateX(-30px);
+  display: flex;
+  justify-content: space-between;
+}
+
+.h3Player {
+  position: relative;
+  transform: translateY(-20px);
+}
+.h3Curr {
+  position: relative;
+  transform: translateY(-20px) translateX(10px);
+}
+.h3Score {
+  position: relative;
+  transform: translateY(-20px) translateX(20px);
+}
+
+.scoreInput {
+  position: relative;
+  transform: translateY(-20px) translateX(20px);
+  width: 2rem;
+  height: 1.5rem;
+}
+
+.playerLabel {
+  position: relative;
+  transform: translateY(-20px);
+  font-size: large;
+}
+
+.playerCurr {
+  position: relative;
+  transform: translateY(-33px) translateX(10px);
+}
+.button {
+  border: 2px solid rgb(216, 4, 216);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  margin-left: 5px;
+  padding: 3px;
+  font-family: sans-serif;
+  width: 75px;
+}
+.buttonP {
+  border: 2px solid rgb(216, 4, 216);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  margin-left: 5px;
+  padding: 3px;
+  font-family: sans-serif;
+  width: 75px;
+}
+
+.buttonDiv {
+  display: flex;
+}

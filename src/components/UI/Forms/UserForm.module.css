@@ -1,0 +1,95 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input1 {
+  width: 17rem;
+  order: 2;
+}
+
+.input2 {
+  order: 4;
+  width: 17rem;
+}
+
+.input3 {
+  order: 6;
+}
+
+.input4 {
+  order: 8;
+}
+
+.input5 {
+  order: 10;
+}
+
+.label1 {
+  order: 1;
+}
+
+.label2 {
+  order: 3;
+}
+
+.label3 {
+  order: 5;
+}
+
+.label4 {
+  order: 7;
+}
+
+.label5 {
+  order: 9;
+}
+
+.type {
+  position: relative;
+}
+
+.eNotValid {
+  background-color: rgb(173, 69, 69);
+  opacity: 80%;
+  width: 17rem;
+  order: 2;
+}
+.pNotValid {
+  background-color: rgb(173, 69, 69);
+  opacity: 80%;
+  width: 17rem;
+  order: 4;
+}
+
+.space {
+  order: 9;
+  height: 1rem;
+}
+
+.button1 {
+  border: 2px solid purple;
+  border-radius: 10px;
+  background-color: rgb(201, 7, 201);
+  color: black;
+  font-size: x-large;
+  font: bolder;
+  font-style: initial;
+  order: 11;
+  margin: 5px;
+  padding: 3px;
+  font-family: sans-serif;
+  width: 100px;
+  height: 45px;
+}
+.button2 {
+  border: 2px solid rgb(216, 4, 216);
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  order: 12;
+  margin-left: 5px;
+  padding: 3px;
+  font-family: sans-serif;
+  width: 75px;
+}

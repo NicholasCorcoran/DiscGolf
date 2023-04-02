@@ -1,0 +1,11 @@
+.playerCard {
+  background-color: lightgrey;
+  border: 2px solid black;
+  border-radius: 25px;
+  margin: 2rem;
+  padding: 1rem 3rem 3rem 3rem;
+  width: 20rem auto;
+  height: 100px auto;
+  align-items: center;
+  justify-items: center;
+}
