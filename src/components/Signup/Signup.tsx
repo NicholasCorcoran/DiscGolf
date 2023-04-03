@@ -11,6 +11,7 @@ import { auth } from "../../firebaseSetup";
 import { AuthDataFormat } from "../../models/authDataFormat";
 import { updateProfile } from "firebase/auth";
 import { Card } from "../UI/Cards/Card";
+import profilePic from "../../assets/playerIcon.jpg";
 
 export const Signup: React.FC = () => {
   const authc = auth;
