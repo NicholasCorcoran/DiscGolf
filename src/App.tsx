@@ -6,6 +6,7 @@ import { PlayerPage } from "./pages/PlayerPage";
 import { RoundPage } from "./pages/RoundPage";
 import { WelcomePage } from "./pages/WelcomePage";
 import { auth } from "./firebaseSetup";
+import { Root } from "./pages/Root";
 
 function App() {
   const ctx = React.useContext(UserContext);
@@ -17,10 +18,16 @@ function App() {
   }, []);
 
   const router = createBrowserRouter([
-    { path: "/", element: <HomePage /> },
-    { path: "/player", element: <WelcomePage /> },
-    { path: "/player/:playerId", element: <PlayerPage /> },
-    { path: "/new_round", element: <RoundPage /> },
+    {
+      path: "/",
+      element: <Root />,
+      children: [
+        { path: "/", element: <HomePage /> },
+        { path: "/player", element: <WelcomePage /> },
+        { path: "/player/:playerId", element: <PlayerPage /> },
+        { path: "/new_round", element: <RoundPage /> },
+      ],
+    },
   ]);
 
   return <RouterProvider router={router} />;
