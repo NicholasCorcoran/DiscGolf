@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.div {
+  position: relative;
+  transform: translateY(-10rem);
+}
+
+.about {
+  position: relative;
+  transform: translateY(-20rem) translateX(3rem);
+}
+
+.about h1 {
+  color: white;
+  font-style: italic;
+}
+
+.about h2 {
+  color: white;
+}
+
+.about p {
+  color: white;
+  width: 100%;
+}
+
+.card1 {
+  background-color: rgb(210, 98, 214);
+  border: 2px solid black;
+  border-radius: 25px;
+  margin: 2rem;
+  padding: 1rem 1rem 1rem 1rem;
+  width: 30rem;
+  height: auto;
+}
+
+.card2 {
+  background-color: rgb(210, 98, 214);
+  border: 2px solid black;
+  border-radius: 25px;
+  margin: 2rem;
+  padding: 1rem 1rem 1rem 1rem;
+  width: auto;
+  height: auto;
+}
