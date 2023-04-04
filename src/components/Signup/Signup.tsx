@@ -43,6 +43,7 @@ export const Signup: React.FC = () => {
       localStorage.setItem("token", JSON.stringify(token));
       localStorage.setItem("player_uid", JSON.stringify(authData.uid));
       ctx.userSignedIn(userInfo);
+      ctx.login();
     } catch (e: any) {
       setErrorMessage(e.code);
     }
