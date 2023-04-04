@@ -1,0 +1,23 @@
+.dropDown {
+  position: absolute;
+
+  width: 300px;
+  transform: translateX(-44%) translateY(126px);
+  background-color: #00ffff;
+  border: 2px solid black;
+  border-radius: 25px;
+
+  overflow: hidden;
+}
+
+.menuItem {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 300ms;
+}
+
+.menuItem:hover {
+  background-color: #6a9797;
+}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { UserFormatType } from "../../../models/userFormat";
-import { useNavigate } from "react-router-dom";
+
 import { UserContext } from "../../../context/user-context";
 import classes from "./UserForm.module.css";
 import { SignupForm } from "../../Signup/SignupForm";
@@ -39,8 +39,6 @@ export const UserForm: React.FC<{
   const pClass = pTouched && !pValid ? classes.pNotValid : classes.input2;
 
   const ctx = React.useContext(UserContext);
-
-  const navigate = useNavigate();
 
   const onEmailChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
@@ -124,7 +122,6 @@ export const UserForm: React.FC<{
         );
 
         props.onSubmit(enteredUserData);
-        navigate("/player");
       } else {
         console.log("invalid inputs");
         return;
@@ -149,7 +146,6 @@ export const UserForm: React.FC<{
         console.log(enteredUserData);
 
         props.onSubmit(enteredUserData);
-        navigate("/player");
       } else {
         console.log("invalid inputs");
         return;

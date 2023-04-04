@@ -11,6 +11,7 @@ import { auth } from "../../firebaseSetup";
 import { AuthDataFormat } from "../../models/authDataFormat";
 import { updateProfile } from "firebase/auth";
 import { Card } from "../UI/Cards/Card";
+import profilePic from "../../assets/playerIcon.jpg";
 
 export const Signup: React.FC = () => {
   const authc = auth;
@@ -42,6 +43,7 @@ export const Signup: React.FC = () => {
       localStorage.setItem("token", JSON.stringify(token));
       localStorage.setItem("player_uid", JSON.stringify(authData.uid));
       ctx.userSignedIn(userInfo);
+      ctx.login();
     } catch (e: any) {
       setErrorMessage(e.code);
     }

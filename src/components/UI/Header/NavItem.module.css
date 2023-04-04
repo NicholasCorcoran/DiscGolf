@@ -1,0 +1,11 @@
+.navItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  transition: filter 300ms;
+}
+
+.navItem:hover {
+  filter: brightness(1.8);
+}
