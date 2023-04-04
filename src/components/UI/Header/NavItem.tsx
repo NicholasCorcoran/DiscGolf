@@ -9,9 +9,7 @@ export const NavItem: React.FC<{
 
   return (
     <li className={classes.navItem}>
-      <a href="#" onClick={() => setOpen(!open)}>
-        {props.icon}
-      </a>
+      <a onClick={() => setOpen(!open)}>{props.icon}</a>
       {open && props.children}
     </li>
   );
