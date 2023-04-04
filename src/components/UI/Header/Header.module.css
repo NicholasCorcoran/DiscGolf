@@ -17,13 +17,13 @@
 .header h1 {
   position: relative;
   transform: translateX(3rem);
+  color: #29dbd8;
 }
 
 .image {
   position: relative;
   transform: translateY(0.6rem) translateX(-2rem);
   border-radius: 100%;
-  width: 5.2rem;
 }
 .image2 {
   position: relative;
