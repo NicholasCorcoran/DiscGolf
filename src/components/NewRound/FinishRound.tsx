@@ -5,6 +5,7 @@ import { chronoFirebase } from "../../http";
 import { UserContext } from "../../context/user-context";
 
 const saveFinishedRound = (data: any, uid: string) => {
+  console.log(data);
   chronoFirebase
     .post("/CompletedRounds.json", data)
     .then(function (response) {
@@ -37,6 +38,7 @@ export const FinishRound = () => {
       playerId: playerCtx.userInfo.uid,
       scoreCard: ctx.scoreCard,
     };
+    console.log(data);
     saveFinishedRound(JSON.stringify(data), data.playerId);
   }, []);
 

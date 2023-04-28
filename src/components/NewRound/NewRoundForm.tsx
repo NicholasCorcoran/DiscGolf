@@ -133,6 +133,7 @@ export const NewRoundForm: React.FC<{
     const pars = layoutData[lnIndex].holePars;
     const dist = layoutData[lnIndex].holeDistances;
     ctx.onCourseSelected(courseSelected, pars, dist);
+    ctx.onStartofCourseInfo(courseName, layout);
     props.onSubmit();
   };
   const helperData = layoutData.map((data) => {

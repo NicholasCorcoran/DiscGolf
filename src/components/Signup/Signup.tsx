@@ -11,7 +11,6 @@ import { auth } from "../../firebaseSetup";
 import { AuthDataFormat } from "../../models/authDataFormat";
 import { updateProfile } from "firebase/auth";
 import { Card } from "../UI/Cards/Card";
-import profilePic from "../../assets/playerIcon.jpg";
 
 export const Signup: React.FC = () => {
   const authc = auth;
@@ -47,22 +46,6 @@ export const Signup: React.FC = () => {
     } catch (e: any) {
       setErrorMessage(e.code);
     }
-
-    // createUserWithEmailAndPassword(authc, userData.email, userData.password)
-    //     .then(async(userCredential) => {
-    //         const user = userCredential.user;
-
-    //         const token = await user.getIdToken()
-    //         const userData = new AuthDataFormat(token ,user.displayName, user.email!, user.uid)
-    //         ctx.userSignedIn(userData)
-    //     })
-    //     .catch((e)=>{
-    //         const errorCode = e.code;
-    //         const errorMessage = e.message;
-    //         console.log(errorCode)
-    //         console.log(errorMessage)
-
-    //     })
   };
 
   return (

@@ -3,9 +3,7 @@ import { Course } from "../models/coursesFormat";
 
 type CourseDataFormat = {
   name: string;
-  address: string;
   layoutName: string;
-  layoutDiff: string;
 };
 
 export const CoursesContext = React.createContext({
@@ -15,12 +13,7 @@ export const CoursesContext = React.createContext({
   courseData: {} as CourseDataFormat,
   playerNames: [] as string[],
   scoreCard: [] as { pName: string; card: number[] }[],
-  onStartofCourseInfo: (
-    name: string,
-    address: string,
-    layoutName: string,
-    layoutDiff: string
-  ) => {},
+  onStartofCourseInfo: (name: string, layoutName: string) => {},
   onDistanceAdded: (event: React.ChangeEvent<HTMLInputElement>) => {},
   onParAdded: (event: React.ChangeEvent<HTMLInputElement>) => {},
   onCourseSelected: (
@@ -61,17 +54,10 @@ export const CourseProvider: React.FC<{ children: React.ReactNode }> = (
   const onParAdded = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPar((prevState) => [...prevState, +event.target.value]);
   };
-  const onStartofCourseInfo = (
-    name: string,
-    address: string,
-    layoutName: string,
-    layoutDiff: string
-  ) => {
+  const onStartofCourseInfo = (name: string, layoutName: string) => {
     setCourseData({
       name,
-      address,
       layoutName,
-      layoutDiff,
     });
   };
   const onScoreAdded = (

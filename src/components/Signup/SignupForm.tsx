@@ -35,6 +35,20 @@ export const SignupForm: React.FC<{
         onBlur={props.onReBlur}
         onChange={props.onRePasswordChange}
       />
+      <label htmlFor="displayname" className={classes.label4}>
+        First Name
+        {props.fNErrorMessage ? (
+          <FormErrorMessagingHandler errorMessage={props.fNErrorMessage} />
+        ) : null}
+      </label>
+      <input
+        className={fClass}
+        id="displayname"
+        type="text"
+        name="displayname"
+        onBlur={props.onFNBlur}
+        onChange={props.onFNameChange}
+      />
       <label htmlFor="fname" className={classes.label4}>
         First Name
         {props.fNErrorMessage ? (
