@@ -14,15 +14,18 @@ export const UserForm: React.FC<{
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
+  const [dName, setDName] = useState("");
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
   const [eTouched, setETouched] = useState(false);
   const [pTouched, setPTouched] = useState(false);
+  const [dTouched, setDTouched] = useState(false);
   const [reTouched, setReTouched] = useState(false);
   const [fNTouched, setFNTouched] = useState(false);
   const [lNTouched, setLNTouched] = useState(false);
   const [eValid, setEValid] = useState(false);
   const [pValid, setPValid] = useState(false);
+  const [dValid, setDValid] = useState(false);
   const [reValid, setReValid] = useState(false);
   const [fNValid, setFNValid] = useState(false);
   const [lNValid, setLNValid] = useState(false);
@@ -33,6 +36,7 @@ export const UserForm: React.FC<{
       ? "Please Enter Something Longer than 6 Characters"
       : "";
   const reEM = reTouched && !reValid ? "Does not match password" : "";
+  const dEM = dTouched && !dValid ? "Please Enter Display Name" : "";
   const fnEM = fNTouched && !fNValid ? "Please Enter First Name" : "";
   const lnEM = lNTouched && !lNValid ? "Please Enter Last Name" : "";
   const eClass = eTouched && !eValid ? classes.eNotValid : classes.input1;
@@ -58,6 +62,9 @@ export const UserForm: React.FC<{
   };
   const onLNameChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLName(event.target.value);
+  };
+  const onDNameChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setDName(event.target.value);
   };
 
   const onEmailBlur = () => {
@@ -85,6 +92,15 @@ export const UserForm: React.FC<{
       setReValid(false);
     }
     setReTouched(true);
+  };
+
+  const onDBlur = () => {
+    if (dName.trim() !== "") {
+      setFNValid(true);
+    } else {
+      setFNValid(false);
+    }
+    setFNTouched(true);
   };
 
   const onFNBlur = () => {
@@ -188,11 +204,14 @@ export const UserForm: React.FC<{
           <SignupForm
             onFNameChange={onFNameChangeHandler}
             onLNameChange={onLNameChangeHandler}
+            onDNameChange={onDNameChangeHandler}
             onReBlur={onRePassBlur}
+            onDBlur={onDBlur}
             onFNBlur={onFNBlur}
             onLNBlur={onLNBlur}
             onRePasswordChange={onRePasswordChangeHandler}
             fNErrorMessage={fnEM}
+            dErrorMessage={dEM}
             lNErrorMessage={lnEM}
             reErrorMessage={reEM}
           />

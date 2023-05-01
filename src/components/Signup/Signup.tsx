@@ -11,12 +11,13 @@ import { auth } from "../../firebaseSetup";
 import { AuthDataFormat } from "../../models/authDataFormat";
 import { updateProfile } from "firebase/auth";
 import { Card } from "../UI/Cards/Card";
-import profilePic from "../../assets/playerIcon.jpg";
+import { useNavigate } from "react-router-dom";
 
 export const Signup: React.FC = () => {
   const authc = auth;
   const ctx = React.useContext(UserContext);
   const [errorMessage, setErrorMessage] = React.useState<any>();
+  const nav = useNavigate();
 
   const onSubmitHandler = async (userData: UserFormatType) => {
     try {
@@ -44,25 +45,10 @@ export const Signup: React.FC = () => {
       localStorage.setItem("player_uid", JSON.stringify(authData.uid));
       ctx.userSignedIn(userInfo);
       ctx.login();
+      nav("/player");
     } catch (e: any) {
       setErrorMessage(e.code);
     }
-
-    // createUserWithEmailAndPassword(authc, userData.email, userData.password)
-    //     .then(async(userCredential) => {
-    //         const user = userCredential.user;
-
-    //         const token = await user.getIdToken()
-    //         const userData = new AuthDataFormat(token ,user.displayName, user.email!, user.uid)
-    //         ctx.userSignedIn(userData)
-    //     })
-    //     .catch((e)=>{
-    //         const errorCode = e.code;
-    //         const errorMessage = e.message;
-    //         console.log(errorCode)
-    //         console.log(errorMessage)
-
-    //     })
   };
 
   return (

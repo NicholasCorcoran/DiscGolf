@@ -12,6 +12,10 @@
   order: 10;
   width: 17rem;
 }
+.input6 {
+  order: 12;
+  width: 17rem;
+}
 
 .label3 {
   order: 5;
@@ -23,6 +27,9 @@
 
 .label5 {
   order: 9;
+}
+.label6 {
+  order: 11;
 }
 .rNotValid {
   background-color: rgb(173, 69, 69);
@@ -60,7 +67,7 @@
   font-size: x-large;
   font: bolder;
   font-style: initial;
-  order: 11;
+  order: 15;
   padding: 3px;
   font-family: sans-serif;
   width: 100px;
@@ -71,7 +78,7 @@
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
   color: black;
-  order: 12;
+  order: 16;
   padding: 3px;
   font-family: sans-serif;
   width: 75px;

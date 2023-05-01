@@ -1,15 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { ScoreCardFeed } from "./ScoreCardFeed";
 import { UserContext } from "../../context/user-context";
+import classes from "./Welcome.module.css";
 
-export const Welcome = ()=> {
+export const Welcome = () => {
+  const ctx = React.useContext(UserContext);
 
-    const ctx = React.useContext(UserContext);
-    console.log(ctx.userInfo.uid)
-
-    return <>
-        <h1>WelcomePage</h1>
-        <h1><Link to={`/player/${ctx.userInfo.uid}`}>PlayerPage</Link></h1>
-        <h1><Link to={`/new_round`}>Start a New Round</Link></h1>
+  return (
+    <>
+      <div>
+        <header>
+          <h2>DisplayName</h2>
+        </header>
+        <div className={classes.cont}>
+          <h2>DiscBag</h2>
+          <ScoreCardFeed />
+          <h2>Messages</h2>
+        </div>
+      </div>
     </>
-}
+  );
+};

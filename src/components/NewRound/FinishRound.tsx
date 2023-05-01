@@ -36,9 +36,16 @@ export const FinishRound = () => {
       layoutName: ctx.courseData.layoutName,
       playerId: playerCtx.userInfo.uid,
       scoreCard: ctx.scoreCard,
+      date: new Date(),
     };
+    console.log(data);
     saveFinishedRound(JSON.stringify(data), data.playerId);
-  }, []);
+  }, [
+    ctx.courseData.layoutName,
+    ctx.courseData.name,
+    ctx.scoreCard,
+    playerCtx.userInfo.uid,
+  ]);
 
   return (
     <>
