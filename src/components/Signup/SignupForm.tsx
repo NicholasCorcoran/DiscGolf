@@ -6,18 +6,22 @@ export const SignupForm: React.FC<{
   onRePasswordChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onFNameChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onLNameChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onDNameChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onReBlur: () => void;
   onFNBlur: () => void;
   onLNBlur: () => void;
+  onDBlur: () => void;
   reErrorMessage: string;
+  dErrorMessage: string;
   fNErrorMessage: string;
   lNErrorMessage: string;
 }> = (props) => {
   // const repasswordClass =
 
   const rClass = props.reErrorMessage ? classes.rNotValid : classes.input3;
-  const fClass = props.fNErrorMessage ? classes.fNotValid : classes.input4;
-  const lClass = props.lNErrorMessage ? classes.lNotValid : classes.input5;
+  const dClass = props.dErrorMessage ? classes.dNotValid : classes.input4;
+  const fClass = props.fNErrorMessage ? classes.fNotValid : classes.input5;
+  const lClass = props.lNErrorMessage ? classes.lNotValid : classes.input6;
 
   return (
     <>
@@ -36,20 +40,20 @@ export const SignupForm: React.FC<{
         onChange={props.onRePasswordChange}
       />
       <label htmlFor="displayname" className={classes.label4}>
-        First Name
+        Display Name
         {props.fNErrorMessage ? (
           <FormErrorMessagingHandler errorMessage={props.fNErrorMessage} />
         ) : null}
       </label>
       <input
-        className={fClass}
+        className={dClass}
         id="displayname"
         type="text"
         name="displayname"
         onBlur={props.onFNBlur}
         onChange={props.onFNameChange}
       />
-      <label htmlFor="fname" className={classes.label4}>
+      <label htmlFor="fname" className={classes.label5}>
         First Name
         {props.fNErrorMessage ? (
           <FormErrorMessagingHandler errorMessage={props.fNErrorMessage} />
@@ -63,7 +67,7 @@ export const SignupForm: React.FC<{
         onBlur={props.onFNBlur}
         onChange={props.onFNameChange}
       />
-      <label htmlFor="lname" className={classes.label5}>
+      <label htmlFor="lname" className={classes.label6}>
         Last Name
         {props.lNErrorMessage ? (
           <FormErrorMessagingHandler errorMessage={props.lNErrorMessage} />

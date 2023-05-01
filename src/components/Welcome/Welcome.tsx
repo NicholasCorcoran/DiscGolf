@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { ScoreCardFeed } from "./ScoreCardFeed";
 import { UserContext } from "../../context/user-context";
 
 export const Welcome = () => {
@@ -17,16 +17,9 @@ export const Welcome = () => {
           <h2>Messages</h2>
         </div>
         <div>
-          <h2>ScoreCard</h2>
+          <ScoreCardFeed />
         </div>
       </div>
-      <h1>WelcomePage</h1>
-      <h1>
-        <Link to={`/player/${ctx.userInfo.uid}`}>PlayerPage</Link>
-      </h1>
-      <h1>
-        <Link to={`/new_round`}>Start a New Round</Link>
-      </h1>
     </>
   );
 };

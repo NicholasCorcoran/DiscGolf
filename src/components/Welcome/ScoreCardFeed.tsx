@@ -1,11 +1,63 @@
 import React from "react";
 import { chronoFirebase } from "../../http";
+import { ScoreCard } from "../ScoreCard/ScoreCard";
+
+type RoundsForm = {
+  courseName: string;
+  layoutName: string;
+  playerId: string;
+  date: string;
+  scoreCard: {
+    card: number[];
+    pName: string;
+  }[];
+};
 
 type PlayerDataForm = {
-  roundsPlayed: any;
+  Friends: string[];
+  LastName: string;
+  RoundsPlayed: RoundsForm;
+  displayName: string;
+  firstName: string;
 };
 
 const getPlayerData = (): Promise<PlayerDataForm[]> =>
-  chronoFirebase.get("/PlayerData/RoundsPlayed.json").then(({ data }) => data);
+  chronoFirebase
+    .get("/PlayerData.json")
+    .then(({ data }) => Object.values(data));
 
-export const ScoreCardFeed = () => {};
+export const ScoreCardFeed = () => {
+  const [playerData, setPlayerData] = React.useState<PlayerDataForm[]>([]);
+  const [rounds, setRounds] = React.useState<RoundsForm[]>([]);
+  //const [friends, setFriends] = React.useState<string[]>([])
+
+  React.useEffect(() => {
+    getPlayerData().then(setPlayerData);
+  }, []);
+
+  React.useEffect(() => {
+    if (playerData) {
+      playerData.forEach((i) => {
+        setRounds((prevState) => {
+          return [...prevState, i.RoundsPlayed];
+        });
+      });
+    }
+  }, [playerData]);
+
+  // React.useEffect(() => {
+
+  // }, [playerData])
+
+  return (
+    <>
+      <h1>ScoreCards</h1>
+      {rounds
+        ? rounds.map((i) => {
+            console.log(i);
+            return <ScoreCard key={Math.random()} data={i} />;
+          })
+        : null}
+    </>
+  );
+};
