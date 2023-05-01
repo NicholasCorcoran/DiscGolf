@@ -2,21 +2,21 @@ import React from "react";
 import { ScoreCardFeed } from "./ScoreCardFeed";
 import { UserContext } from "../../context/user-context";
 import classes from "./Welcome.module.css";
+import { SideBar } from "./SideBar";
 
 export const Welcome = () => {
   const ctx = React.useContext(UserContext);
 
   return (
     <>
-      <div>
-        <header>
-          <h2>DisplayName</h2>
-        </header>
-        <div className={classes.cont}>
-          <h2>DiscBag</h2>
-          <ScoreCardFeed />
-          <h2>Messages</h2>
-        </div>
+      <div className={classes.cont}>
+        <SideBar>
+          <p>left side bar</p>
+        </SideBar>
+        <ScoreCardFeed />
+        <SideBar>
+          <p>right side bar (messages)</p>
+        </SideBar>
       </div>
     </>
   );

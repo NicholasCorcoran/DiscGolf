@@ -7,6 +7,7 @@ import { DropDownMenu } from "./DropDownMenu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser, faComment } from "@fortawesome/free-solid-svg-icons";
 import { UserContext } from "../../../context/user-context";
+import { NavBarProvider } from "../../../context/navbar-context";
 
 export const Header = () => {
   const ctx = React.useContext(UserContext);
@@ -22,7 +23,7 @@ export const Header = () => {
   );
 
   return (
-    <>
+    <NavBarProvider>
       <header className={classes.header}>
         <h1>Chrono Disc Golf</h1>
 
@@ -44,6 +45,6 @@ export const Header = () => {
           <img src={frolfImage} alt="disc golf basket" />
         </div>
       )}
-    </>
+    </NavBarProvider>
   );
 };
