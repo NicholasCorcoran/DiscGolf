@@ -23,6 +23,7 @@ export const CoursesContext = React.createContext({
   ): void => {},
   onPlayerAdded: (names: string): void => {},
   onScoreAdded: (scoreCard: { pName: string; score: number }[]) => {},
+  resetPlayers: () => {},
 });
 
 export const CourseProvider: React.FC<{ children: React.ReactNode }> = (
@@ -80,6 +81,9 @@ export const CourseProvider: React.FC<{ children: React.ReactNode }> = (
       }
     });
   };
+  const resetPlayers = () => {
+    setPlayerNames([]);
+  };
 
   const onPlayerAdded = (names: string) => {
     setPlayerNames((prevState) => [...prevState, names]);
@@ -105,6 +109,7 @@ export const CourseProvider: React.FC<{ children: React.ReactNode }> = (
         onCourseSelected: onCourseSelected,
         onPlayerAdded: onPlayerAdded,
         onScoreAdded: onScoreAdded,
+        resetPlayers: resetPlayers,
       }}
     >
       {props.children}

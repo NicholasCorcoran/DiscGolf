@@ -51,7 +51,6 @@ export const ScoreCardFeed = () => {
 
   return (
     <>
-      <h1>ScoreCards</h1>
       {rounds
         ? rounds.map((i) => {
             return <ScoreCard key={Math.random()} data={i} />;

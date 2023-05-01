@@ -35,11 +35,12 @@ export const NewRoundForm: React.FC<{
 
   const [playerInputs, setPlayerInputs] = React.useState<InputNameFormat[]>([]);
 
+  const ctx = React.useContext(CoursesContext);
+
   React.useEffect(() => {
     getCourses().then(setCourseData);
+    ctx.resetPlayers();
   }, []);
-
-  const ctx = React.useContext(CoursesContext);
 
   const onCourseSelect = (
     newValue: SingleValue<{ value: string; label: string }>

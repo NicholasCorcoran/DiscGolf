@@ -1,5 +1,5 @@
-import userEvent from "@testing-library/user-event";
 import React from "react";
+import classes from "./ScoreCard.module.css";
 
 type ScoreCardForm = {
   card: number[];
@@ -32,24 +32,26 @@ export const ScoreCard: React.FC<{
   return (
     <>
       <div>
-        <h1>Fuck</h1>
-
         {data.map((i) => {
           return (
-            <div key={Math.random()}>
-              <h1 key={Math.random()}>{i.courseName}</h1>
-              <h1 key={Math.random()}>{i.layoutName}</h1>
-              <h2 key={Math.random()}>{i.date}</h2>
-              {i.scoreCard.map((j) => {
-                return (
-                  <div key={Math.random()}>
-                    <p key={Math.random()}>{j.pName}</p>
-                    {j.card.map((k) => {
-                      return <p key={Math.random()}>{k}</p>;
-                    })}
-                  </div>
-                );
-              })}
+            <div key={Math.random()} className={classes.card}>
+              <div>
+                <h1 key={Math.random()}>{i.courseName}</h1>
+                <h3 key={Math.random()}>{i.layoutName}</h3>
+              </div>
+              <div className={classes.innerCard}>
+                {i.scoreCard.map((j) => {
+                  return (
+                    <div key={Math.random()} className={classes.scores}>
+                      <p key={Math.random()}>{j.pName}</p>
+                      {j.card.map((k) => {
+                        return <p key={Math.random()}>{k}</p>;
+                      })}
+                    </div>
+                  );
+                })}
+              </div>
+              <p key={Math.random()}>{i.date.substring(0, 10)}</p>
             </div>
           );
         })}
