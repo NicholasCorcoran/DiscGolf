@@ -38,7 +38,7 @@ export const FinishRound = () => {
       scoreCard: ctx.scoreCard,
       date: new Date(),
     };
-    console.log(data);
+
     saveFinishedRound(JSON.stringify(data), data.playerId);
   }, [
     ctx.courseData.layoutName,
