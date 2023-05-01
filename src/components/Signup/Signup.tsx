@@ -11,11 +11,13 @@ import { auth } from "../../firebaseSetup";
 import { AuthDataFormat } from "../../models/authDataFormat";
 import { updateProfile } from "firebase/auth";
 import { Card } from "../UI/Cards/Card";
+import { useNavigate } from "react-router-dom";
 
 export const Signup: React.FC = () => {
   const authc = auth;
   const ctx = React.useContext(UserContext);
   const [errorMessage, setErrorMessage] = React.useState<any>();
+  const nav = useNavigate();
 
   const onSubmitHandler = async (userData: UserFormatType) => {
     try {
@@ -43,6 +45,7 @@ export const Signup: React.FC = () => {
       localStorage.setItem("player_uid", JSON.stringify(authData.uid));
       ctx.userSignedIn(userInfo);
       ctx.login();
+      nav("/player");
     } catch (e: any) {
       setErrorMessage(e.code);
     }

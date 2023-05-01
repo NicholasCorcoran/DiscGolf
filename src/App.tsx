@@ -15,7 +15,6 @@ function App() {
   React.useEffect(() => {
     if (localStorage.getItem("token")) {
       const data = auth.currentUser?.uid;
-      console.log(data);
     }
   }, []);
 

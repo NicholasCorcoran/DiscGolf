@@ -4,7 +4,6 @@ import { UserContext } from "../../context/user-context";
 
 export const Welcome = () => {
   const ctx = React.useContext(UserContext);
-  console.log(ctx.userInfo.uid);
 
   return (
     <>
