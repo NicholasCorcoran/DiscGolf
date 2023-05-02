@@ -2,7 +2,7 @@
   background-color: lightgray;
   border: 2px solid black;
 
-  width: auto;
+  width: 100%;
   height: fill;
   display: flex;
 }

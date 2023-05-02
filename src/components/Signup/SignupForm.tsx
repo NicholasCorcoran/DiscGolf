@@ -50,8 +50,8 @@ export const SignupForm: React.FC<{
         id="displayname"
         type="text"
         name="displayname"
-        onBlur={props.onFNBlur}
-        onChange={props.onFNameChange}
+        onBlur={props.onDBlur}
+        onChange={props.onDNameChange}
       />
       <label htmlFor="fname" className={classes.label5}>
         First Name
