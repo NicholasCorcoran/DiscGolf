@@ -27,7 +27,7 @@ export const ScoreCard: React.FC<{
 
   React.useEffect(() => {
     setData(Object.values(props.data) as unknown as DataForm[]);
-  }, []);
+  }, [props.data]);
 
   return (
     <>
