@@ -9,13 +9,17 @@ export const Welcome = () => {
   return (
     <>
       <div className={classes.cont}>
+        <div className={classes.lside}>
         <SideBar>
           <LeftSideBar />
         </SideBar>
+        </div>
         <ScoreCardFeed />
+        <div className={classes.rside}>
         <SideBar>
           <p>right side bar (messages)</p>
         </SideBar>
+        </div>
       </div>
     </>
   );

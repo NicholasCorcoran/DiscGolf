@@ -3,3 +3,17 @@
   grid-template-columns: 20% 60% 20%;
   transform: translateY(4.9rem);
 }
+
+.lside{
+  width: 100%;
+    height: fill;
+    display: flex;
+}
+
+.rside {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  width: 100%;
+  height: fill;
+  display: flex;
+}
