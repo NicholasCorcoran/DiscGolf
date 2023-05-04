@@ -65,6 +65,7 @@ export const UserForm: React.FC<{
   };
   const onDNameChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDName(event.target.value);
+    console.log(dName);
   };
 
   const onEmailBlur = () => {
@@ -96,11 +97,11 @@ export const UserForm: React.FC<{
 
   const onDBlur = () => {
     if (dName.trim() !== "") {
-      setFNValid(true);
+      setDValid(true);
     } else {
-      setFNValid(false);
+      setDValid(false);
     }
-    setFNTouched(true);
+    setDTouched(true);
   };
 
   const onFNBlur = () => {
@@ -133,6 +134,7 @@ export const UserForm: React.FC<{
           email,
           password,
           repassword,
+          dName,
           fName,
           lName
         );
@@ -156,6 +158,7 @@ export const UserForm: React.FC<{
           email,
           password,
           repassword,
+          dName,
           fName,
           lName
         );
