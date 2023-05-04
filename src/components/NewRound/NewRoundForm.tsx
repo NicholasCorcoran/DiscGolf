@@ -40,7 +40,7 @@ export const NewRoundForm: React.FC<{
   React.useEffect(() => {
     getCourses().then(setCourseData);
     ctx.resetPlayers();
-  }, [ctx]);
+  }, []);
 
   const onCourseSelect = (
     newValue: SingleValue<{ value: string; label: string }>
