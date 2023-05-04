@@ -18,6 +18,17 @@
   display: flex;
   border: 1px solid #000;
 }
+.backScores {
+  width: 100%;
+  display: flex;
+  border: 1px solid #000;
+}
+/* .backNine{
+  display: none;
+}
+.fontNine{
+  display: block;
+} */
 
 .innerCard {
   background-color: #fff;
@@ -70,6 +81,7 @@ margin-bottom: 0px;
   height: 30px;
   padding: 10px 0px;
   text-align: center;
+  flex: 1;
 }
 .scorecardPar {
   background-color: #63b263;
@@ -79,4 +91,7 @@ margin-bottom: 0px;
 }
 .scorecardDistance {
   background-color: #f9ffb5;
+}
+.scorecardRowScore{
+  display: flex;
 }
