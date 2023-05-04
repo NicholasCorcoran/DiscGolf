@@ -179,18 +179,7 @@ export const UserForm: React.FC<{
         <FormErrorMessagingHandler errorMessage={props.errorMessage} />
       ) : null}
       <form className={classes.form}>
-        <label htmlFor="email" className={classes.label1}>
-          Email
-          {eEM ? <FormErrorMessagingHandler errorMessage={eEM} /> : null}
-        </label>
-        <input
-          className={eClass}
-          id="email"
-          type="text"
-          name="email"
-          onBlur={onEmailBlur}
-          onChange={onEmailChangeHandler}
-        />
+        c
         <label htmlFor="password" className={classes.label2}>
           Password
           {pEM ? <FormErrorMessagingHandler errorMessage={pEM} /> : null}
