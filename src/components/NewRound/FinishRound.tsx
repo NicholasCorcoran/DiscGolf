@@ -29,23 +29,21 @@ export const FinishRound = () => {
   const pars = ctx.coursePars;
   const dist = ctx.courseDistances;
   const scoreCard = ctx.scoreCard;
-
-  React.useEffect(() => {
-    const data = {
+  const data = {
       courseName: ctx.courseData.name,
       layoutName: ctx.courseData.layoutName,
+      pars,
+      dist,
       playerId: playerCtx.userInfo.uid,
       scoreCard: ctx.scoreCard,
       date: new Date(),
     };
 
+  React.useEffect(() => {
+    
+
     saveFinishedRound(JSON.stringify(data), data.playerId);
-  }, [
-    ctx.courseData.layoutName,
-    ctx.courseData.name,
-    ctx.scoreCard,
-    playerCtx.userInfo.uid,
-  ]);
+  }, []);
 
   return (
     <>

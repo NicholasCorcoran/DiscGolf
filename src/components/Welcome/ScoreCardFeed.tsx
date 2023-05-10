@@ -6,6 +6,8 @@ type RoundsForm = {
   courseName: string;
   layoutName: string;
   playerId: string;
+  dist: number[];
+  pars: number[]
   date: string;
   scoreCard: {
     card: number[];

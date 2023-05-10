@@ -9,6 +9,8 @@ type ScoreCardForm = {
 type DataForm = {
   courseName: string;
   layoutName: string;
+  dist: number[];
+  pars:number[]
   playerId: string;
   date: string;
   scoreCard: ScoreCardForm[];
@@ -21,6 +23,8 @@ export const ScoreCard: React.FC<{
     courseName: string;
     layoutName: string;
     playerId: string;
+    dist: number[];
+    pars: number[]
     date: string;
     scoreCard: ScoreCardForm[];
   };
@@ -87,14 +91,14 @@ export const ScoreCard: React.FC<{
                                 })}
                               </div>
                               <div key={Math.random()} className={classes.scorecardRowScore}>
-                                 {dist_dummy.slice(0,9).map((d)=>{
+                                 {i.dist.slice(0,9).map((d)=>{
                                   return <div key={Math.random()} className={classes.scorecardDistance}>
                                     {d}
                                 </div>
                                 })}
                                 </div>
                                 <div key={Math.random()} className={classes.scorecardRowScore}>
-                                {par_dummy.slice(0,9).map((p)=>{
+                                {i.pars.slice(0,9).map((p)=>{
                                   return <div key={Math.random()} className={classes.scorecardPar}>
                                     {p}
                                 </div>

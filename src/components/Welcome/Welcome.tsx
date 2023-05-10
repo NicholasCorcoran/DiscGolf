@@ -14,7 +14,9 @@ export const Welcome = () => {
           <LeftSideBar />
         </SideBar>
         </div>
+        <div>
         <ScoreCardFeed />
+        </div>
         <div className={classes.rside}>
         <SideBar>
           <p>right side bar (messages)</p>
